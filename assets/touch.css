@@ -1,0 +1,35 @@
+/* The renderer wraps this file in an exact server URL prefix; other sites keep their styling. */
+html :is(button, .button-like, select, input:not([type="checkbox"]):not([type="radio"]):not([type="range"])) {
+  min-height: 44px !important;
+  box-sizing: border-box !important;
+}
+html :is(button, .button-like) { touch-action: manipulation; }
+html :is(input, select, textarea) { font-size: max(16px, 1em) !important; }
+html :is(.mc-np-buttons, .mc-bar, .mc-osd-top) button { min-width: 44px !important; }
+/* Keep the existing theme, with less rendering work on the Pi. */
+.parallax-layer, .petals > span { animation-play-state: paused !important; }
+html :is(.mc-np, .mc-remote) { backdrop-filter: none !important; }
+/* Media's compact layout also fits 800- and 1024-pixel landscape touch displays. */
+@media (max-width: 1100px) {
+  html .mc:not([data-screen-id]) {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-rows: auto minmax(0, 1fr) !important;
+    gap: .4rem !important; margin: .4rem !important;
+    height: calc(var(--page-h, calc(100vh - 3.6rem)) - .8rem) !important;
+  }
+  html .mc-menu { flex-direction: row !important; flex-wrap: wrap !important; padding: .25rem !important; }
+  html .mc-clock, html .mc-date { display: none !important; }
+  html .mc-view-select { display: block !important; flex: 1 1 9rem; min-width: 0; }
+  html .mc:not([data-screen-id]) .mc-menu-item[data-view] { display: none !important; }
+  html .mc-cast { flex: 1 1 11rem; flex-direction: row !important; align-items: center; margin: 0 !important; padding: .2rem !important; }
+  html .mc-cast select { width: auto !important; flex: 1; min-width: 0; }
+  html .mc-head { padding: .4rem .6rem !important; gap: .4rem !important; }
+  html .mc-head h1 { font-size: 1.2rem !important; }
+  html .mc-tools { margin: 0 !important; flex: 1; }
+  html .mc-tools input { min-width: 0 !important; width: 100%; }
+  html .mc-scroll { padding-left: .6rem !important; padding-right: .6rem !important; }
+  html .mc-detail { grid-template-columns: minmax(0, 1fr) !important; }
+  html .mc-detail > .mc-art { max-width: 10rem; }
+  html .mc-remote { gap: .2rem !important; padding: .3rem .6rem !important; }
+  html .mc-dock { bottom: .35rem !important; width: calc(100vw - .8rem) !important; }
+}

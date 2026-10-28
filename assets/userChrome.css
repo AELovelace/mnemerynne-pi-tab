@@ -1,0 +1,14 @@
+/* Keep Firefox's normal maximized window so the touch bar and keyboard reserve space. */
+#TabsToolbar, #PersonalToolbar, #toolbar-menubar, #sidebar-box, #sidebar-main {
+  display: none !important;
+}
+#navigator-toolbox {
+  position: fixed !important;
+  top: 0 !important;
+  width: 100% !important;
+  z-index: 1000 !important;
+  transform: translateY(-100%) !important;
+}
+/* Ctrl+L still focuses the address field for the device's navigation buttons. */
+#navigator-toolbox:focus-within { transform: translateY(0) !important; }
+#browser { border: 0 !important; }

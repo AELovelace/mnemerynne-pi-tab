@@ -1,0 +1,10 @@
+/* Match Erynne's existing neon palette; use plain labels that fit the small display. */
+* { border-radius: 0; border: none; font-family: sans-serif; font-size: 16px; }
+window#waybar { background: #12031f; color: #ffe9f5; border-bottom: 2px solid #ff2e97; }
+#custom-media, #custom-remote, #custom-home, #custom-back, #custom-reload, #custom-keyboard {
+  padding: 0 10px; margin: 3px 1px; min-height: 44px; background: #230b30;
+}
+#custom-media:hover, #custom-remote:hover, #custom-home:hover, #custom-back:hover,
+#custom-reload:hover, #custom-keyboard:hover { background: #582044; color: #00f0ff; }
+#custom-status { padding: 0 8px; color: #5dffc4; }
+#custom-status.offline { color: #ff8aa0; }
